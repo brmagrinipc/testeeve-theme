@@ -2,19 +2,105 @@
 Theme Name: TesteEve Theme
 Theme URI: https://testeeve.brunomagrini.com.br
 Author: Bruno Willow
-Description: Tema customizado inicial para o site TesteEve.
-Version: 0.1.0
+Description: Tema customizado minimalista com estética anos 80 editorial.
+Version: 0.2.0
 Text Domain: testeeve-theme
 */
 
-:root{--bg:#0f172a;--card:#111827;--accent:#22c55e;--text:#e5e7eb;--muted:#94a3b8}
-body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(135deg,#020617,#111827);color:var(--text)}
-a{color:#86efac}
-.site-wrap{max-width:960px;margin:0 auto;padding:32px 20px}
-.hero{padding:64px 24px;border-radius:24px;background:rgba(17,24,39,.85);box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.hero h1{font-size:clamp(2rem,5vw,4rem);margin:0 0 16px}
-.hero p{font-size:1.1rem;color:var(--muted);max-width:700px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:28px}
-.card{padding:20px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
-.btn{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:999px;background:var(--accent);color:#052e16;text-decoration:none;font-weight:700}
-footer{margin-top:28px;color:var(--muted);font-size:.95rem}
+:root{
+  --bg:#0a0a0a;
+  --panel:#111111;
+  --text:#f5f1e8;
+  --muted:#c6beae;
+  --accent:#ff2f6d;
+  --accent-2:#22d3ee;
+  --border:#2a2a2a;
+  --max:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:18px/1.7 Georgia,"Times New Roman",serif;
+}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.site-header,.site-footer,.site-main{width:min(100%,var(--max));margin:0 auto;padding:24px 20px}
+.site-header{padding-top:40px}
+.branding{
+  border-top:3px solid var(--accent);
+  border-bottom:1px solid var(--border);
+  padding:18px 0 14px;
+}
+.site-title{
+  margin:0;
+  font:700 clamp(2.2rem,7vw,4.5rem)/0.95 Arial,Helvetica,sans-serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.site-title a{color:var(--text)}
+.site-tagline{
+  margin:10px 0 0;
+  color:var(--muted);
+  font:700 .95rem/1.4 Arial,Helvetica,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+}
+.home-intro,.post-card,.single-article{
+  border:1px solid var(--border);
+  background:var(--panel);
+  padding:20px;
+  margin:0 0 24px;
+}
+.home-intro p:last-child,.post-card p:last-child,.single-article p:last-child{margin-bottom:0}
+.section-label,
+.post-meta{
+  color:var(--muted);
+  font:700 .82rem/1.4 Arial,Helvetica,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+}
+.post-card h2,
+.single-article h1{
+  margin:.45rem 0 .85rem;
+  font:700 clamp(1.7rem,4vw,3rem)/1.05 Arial,Helvetica,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+.entry-content h2,.entry-content h3{
+  margin:1.8rem 0 .7rem;
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.15;
+  text-transform:uppercase;
+}
+.entry-content p,
+.entry-content ul,
+.entry-content ol{margin:0 0 1rem}
+.entry-content ul,.entry-content ol{padding-left:1.3rem}
+.post-thumb{margin:0 0 16px;border:1px solid var(--border)}
+.read-more{
+  display:inline-block;
+  margin-top:8px;
+  padding:10px 14px;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  font:700 .86rem/1 Arial,Helvetica,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+.read-more:hover{background:var(--accent);color:#fff;text-decoration:none}
+.site-footer{
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  padding-bottom:40px;
+  font-size:.95rem;
+}
+.wp-block-image,.aligncenter{margin:1.2rem 0}
+@media (max-width:640px){
+  body{font-size:17px}
+  .site-header,.site-footer,.site-main{padding-left:16px;padding-right:16px}
+  .home-intro,.post-card,.single-article{padding:16px}
+}
